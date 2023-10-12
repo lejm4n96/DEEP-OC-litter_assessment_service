@@ -76,24 +76,23 @@ RUN if [ "$jlab" = true ]; then \
     else echo "[INFO] Skip JupyterLab installation!"; fi
 
 # Install user app
-# RUN git clone -b $branch https://git.ni.dfki.de/cleluschko/litter_assessment_service && \
-#     cd  litter_assessment_service && \
-#     pip3 install --no-cache-dir -e . && \
-#     cd ..
-ADD litter_assessment_service litter_assessment_service
+RUN git clone -b $branch deephdc/DEEP-OC-litter_assessment_service && \
+     cd  litter_assessment_service && \
+     pip3 install --no-cache-dir -e . && \
+     cd ..
 
 RUN cd litter_assessment_service && \
     pip3 install --no-cache-dir -e . 
 
 # Download network weights
-#ENV SWIFT_CONTAINER https://data-deep.a.incd.pt/index.php/s/Zsz2NLxPjb52s5y/download/
-#ENV MODEL_TAR aplastic_q_models.tar.gz
+ENV SWIFT_CONTAINER https://data-deep.a.incd.pt/index.php/s/Zsz2NLxPjb52s5y/download/
+ENV MODEL_TAR aplastic_q_models.tar.gz
 
-#RUN curl --insecure -o ./litter_assessment_service/models/${MODEL_TAR} \
-#    ${SWIFT_CONTAINER}${MODEL_TAR}
+RUN curl --insecure -o ./litter_assessment_service/models/${MODEL_TAR} \
+    ${SWIFT_CONTAINER}${MODEL_TAR}
 
-# RUN cd litter_assessment_service/models && \
-#     tar -xf ${MODEL_TAR}
+RUN cd litter_assessment_service/models && \
+     tar -xf ${MODEL_TAR}
 
 RUN cd litter_assessment_service
 
