@@ -17,7 +17,7 @@ If you want to build the container directly in your machine (because you want to
 git clone https://github.com/DFKI-NI/DEEP-OC-litter_assessment_service
 cd DEEP-OC-litter_assessment_service
 docker build -t deephdc/deep-oc-litter_assessment_service .
-docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 deephdc/DEEP-OC-litter_assessment_service
+docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 deephdc/deep-oc-litter_assessment_service
 ```
 
 These three steps will download the repository from GitHub and will build the Docker container locally on your machine. You can inspect and modify the `Dockerfile` in order to check what is going on. For instance, you can pass the `--debug=True` flag to the `deepaas-run` command, in order to enable the debug mode.
