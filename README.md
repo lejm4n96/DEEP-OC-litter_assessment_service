@@ -16,7 +16,7 @@ If you want to build the container directly in your machine (because you want to
 ```bash
 git clone https://github.com/DFKI-NI/DEEP-OC-litter_assessment_service
 cd DEEP-OC-litter_assessment_service
-docker build -t deephdc/DEEP-OC-litter_assessment_service .
+docker build -t deephdc/deep-oc-litter_assessment_service .
 docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 deephdc/DEEP-OC-litter_assessment_service
 ```
 
