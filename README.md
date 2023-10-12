@@ -10,18 +10,6 @@ This is a container that will run the [litter_assessment_service](https://git.ni
     
 ## Running the container
 
-### Directly from Docker Hub
-
-To run the Docker container directly from Docker Hub and start using the API simply run the following command:
-
-```bash
-$ docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 deephdc/uc-cleluschko-deep-oc-litter_assessment_service
-```
-
-This command will pull the Docker container from the Docker Hub [deephdc](https://hub.docker.com/u/deephdc/) repository and start the default command (`deepaas-run --listen-ip=0.0.0.0`).
-
-**N.B.** For either CPU-based or GPU-based images you can also use [udocker](https://github.com/indigo-dc/udocker).
-
 ### Building the container
 
 If you want to build the container directly in your machine (because you want to modify the `Dockerfile` for instance) follow the following instructions:
