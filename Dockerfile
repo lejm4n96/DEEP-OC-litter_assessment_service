@@ -21,7 +21,7 @@ LABEL version='0.0.1'
 # Integration of DeepaaS API and litter assessment software
 
 # What user branch to clone [!]
-ARG branch=master
+ARG branch=main
 
 # If to install JupyterLab
 ARG jlab=true
