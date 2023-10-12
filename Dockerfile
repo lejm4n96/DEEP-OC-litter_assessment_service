@@ -76,7 +76,7 @@ RUN if [ "$jlab" = true ]; then \
     else echo "[INFO] Skip JupyterLab installation!"; fi
 
 # Install user app
-RUN git clone -b $branch deephdc/DEEP-OC-litter_assessment_service && \
+RUN git clone -b $branch https://github.com/DFKI-NI/litter_assessment_service && \
      cd  litter_assessment_service && \
      pip3 install --no-cache-dir -e . && \
      cd ..
