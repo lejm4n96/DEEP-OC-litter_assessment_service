@@ -94,7 +94,7 @@ RUN curl --insecure -o ./litter_assessment_service/models/${MODEL_TAR} \
 RUN cd litter_assessment_service/models && \
      tar -xf ${MODEL_TAR}
 
-RUN cd litter_assessment_service
+WORKDIR /srv/litter_assessment_service
 
 # Open ports: DEEPaaS (5000), Monitoring (6006), Jupyter (8888)
 EXPOSE 5000 6006 8888
