@@ -11,20 +11,20 @@
 # [!] Note: For the Jenkins CI/CD pipeline, input args are defined inside the
 # Jenkinsfile, not here!
 
-ARG tag=2.9.1
+ARG BASE_IMAGE
 
 # Base image, e.g. tensorflow/tensorflow:2.9.1
-FROM tensorflow/tensorflow:${tag}
+FROM ${BASE_IMAGE}
 
 LABEL maintainer='Carolin Leluschko'
 LABEL version='0.0.1'
 # Integration of DeepaaS API and litter assessment software
 
 # What user branch to clone [!]
-ARG branch=main
+ARG branch
 
 # If to install JupyterLab
-ARG jlab=true
+ARG jlab
 
 # Install Ubuntu packages
 # - gcc is needed in Pytorch images because deepaas installation might break otherwise (see docs) (it is already installed in tensorflow images)
