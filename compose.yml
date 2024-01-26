@@ -12,3 +12,19 @@ services:
     profiles:
       - tensorflow
 
+  deep:
+    image: deephdc/deep-oc-litter_assessment_service
+    build:
+      context: dockers
+      dockerfile: Dockerfile.deep
+      args:
+        - BASE_IMAGE=$L4T_BASE_IMAGE
+        - branch=main
+        - jlab=false
+    container_name: deep_oc_litter
+    network_mode: host
+    tty: true
+    stdin_open: true
+    command: ["deepaas-run", "--listen-ip", "0.0.0.0", "--listen-port", "5000"]
+    profiles:
+      - deep
